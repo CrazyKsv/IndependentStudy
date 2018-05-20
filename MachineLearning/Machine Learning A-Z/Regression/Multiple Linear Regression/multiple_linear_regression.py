@@ -75,4 +75,4 @@ if __name__ == '__main__':
     
     # redo regression
     X_train_2, X_test_2 = train_test_split(new_model, test_size = 0.2, random_state = 0)
-    new_prediction = mult_linear_reg(X_train_2, X_test_2, y_train_2, y_test_2)
+    new_prediction = mult_linear_reg(X_train_2, X_test_2, y_train, y_test)
