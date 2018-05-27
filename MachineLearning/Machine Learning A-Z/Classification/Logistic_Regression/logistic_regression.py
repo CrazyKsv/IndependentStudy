@@ -76,7 +76,8 @@ def logisticRegression_test(classifier, X_test, y_test):
     plt.legend()
     plt.show()
     
-    
+'''
+Note: NEED to see how it works    
 def classify(classifier, age, sal, sc):
 
     # Predicting result
@@ -89,7 +90,7 @@ def classify(classifier, age, sal, sc):
     # reverse the value to test data
     result = sc.inverse_transform(result)
     return result
-
+'''
 if __name__ == '__main__':
     X_train, X_test, y_train, y_test, X, y = preprocess(FILE, 2, 3, -1)
     X_train, X_test, sc = featureScaling(X_train, X_test)
