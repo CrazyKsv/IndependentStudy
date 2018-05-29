@@ -76,26 +76,26 @@ def logisticRegression_test(classifier, X_test, y_test):
     plt.legend()
     plt.show()
     
-'''
-Note: NEED to see how it works    
-def classify(classifier, age, sal, sc):
 
-    # Predicting result
-    sc_new = StandardScaler()
+def classify(classifier, age, sal, sc):
     
-    # need to scale the value first
-    value = sc_new.fit_transform(np.array([[age],[sal]]))
-    print(value)
-    result = classifier.predict(value)
-    # reverse the value to test data
-    result = sc.inverse_transform(result)
+    pre_value = sc.transform(np.array([[age, sal]]))
+    result = classifier.predict(pre_value)
     return result
-'''
+
+
 if __name__ == '__main__':
     X_train, X_test, y_train, y_test, X, y = preprocess(FILE, 2, 3, -1)
     X_train, X_test, sc = featureScaling(X_train, X_test)
     classifier = LogisticRegression(random_state = 0)
     classifier = logisticRegression_train(classifier, X_train, y_train)
     logisticRegression_test(classifier, X_test, y_test)
+    
+    y_predict = classifier.predict(X_test)
+    
+    print(classify(classifier, 30, 10000, sc))
+    
+    
+    #classifier.predict(np.array([[25,10000]]))
 
     
