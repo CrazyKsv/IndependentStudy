@@ -22,7 +22,7 @@ def apriori_learning(file):
     # Training Apriori on the dataset
     rules = apriori(transactions, min_support = 0.003,
                     min_confidence = 0.2, min_lift = 3, min_length = 2)
-    rules = list(rule)
+    rules = list(rules)
     return rules
 
 # dataset = pd.read_csv('Market_Basket_Optimisation.csv', header = None)
