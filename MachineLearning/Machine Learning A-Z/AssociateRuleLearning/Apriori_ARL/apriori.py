@@ -9,7 +9,10 @@ from apyori import apriori
 
 FILE = 'Market_Basket_Optimisation.csv'
 # Data Preprocessing
-def apriori(file):
+def apriori_learning(file):
+    ''' (str) -> list
+    Given a data file, Learn from the data and output associate relation between items
+    '''
     # read the data
     dataset = pd.read_csv(file)
 
