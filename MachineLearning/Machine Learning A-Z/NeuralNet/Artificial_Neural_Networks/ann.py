@@ -83,12 +83,12 @@ def do_predict(classifier, value, sc):
 
 # Part 3 - Making the predictions and evaluating the model
 if __name__ == '__main__':
-    X_train, X_test, y_train, y_test, sc = preprocess(FLIE, 3, 13, 13)
-
+    X_train, X_test, y_train, y_test, sc = preprocess(FILE, 3, 13, 13)
+    classifier = create_ANN(X_test, X_train)
     # Predicting the Test set results
     y_pred = classifier.predict(X_test)
     y_pred = (y_pred > 0.5)
-
+    print(y_pred)
     # Making the Confusion Matrix
     from sklearn.metrics import confusion_matrix
     cm = confusion_matrix(y_test, y_pred)
