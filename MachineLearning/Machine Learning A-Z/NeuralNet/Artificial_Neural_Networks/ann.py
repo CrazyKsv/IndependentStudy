@@ -50,7 +50,7 @@ def preprocess(file, x_start, x_end, y_ind):
 
 # Part 2 - Now let's make the ANN!
 # Importing the Keras libraries and packages
-import keras
+import keras 
 from keras.models import Sequential
 from keras.layers import Dense
 
@@ -83,7 +83,7 @@ def do_predict(classifier, value, sc):
 
 # Part 3 - Making the predictions and evaluating the model
 if __name__ == '__main__':
-    X_train, X_test, y_train, y_test, sc = preprocess(FILE, 3, 13, 13)
+    X_train, X_test, y_train, y_test, sc = preprocess(FILE, 3, 13, -1)
     classifier = create_ANN(X_test, X_train)
     # Predicting the Test set results
     y_pred = classifier.predict(X_test)
