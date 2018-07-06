@@ -36,4 +36,15 @@ defmodule Cards do
   def deal(deck, size) do
     Enum.split(deck, size)
   end
+
+  def save(deck, filename) do
+    File.write(filename, :erlang.term_to_binary(deck))
+  end
+
+  def load(filename) do
+    case File.read(filename) do
+      {:ok, binary} ->  :erlang.binary_to_term(binary)
+      {:error, _reason} -> "Can't read the file"
+    end
+  end
 end
