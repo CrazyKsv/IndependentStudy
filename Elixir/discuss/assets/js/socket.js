@@ -5,16 +5,16 @@
 // and connect at the socket path in "lib/web/endpoint.ex":
 import {Socket} from "phoenix"
 
-let socket = new Socket("/socket", {params: {token: window.userToken}})
 
-
-socket.connect()
 // Now that you are connected, you can join channels with a topic:
 const createSocket = (topicId) => {
+  let socket = new Socket("/socket", {params: {token: window.userToken}})
+
+
+  socket.connect()
   let channel = socket.channel(`comments:${topicId}`, {})
   channel.join()
     .receive("ok", resp => { 
-      
       renderComments(resp.comments);
     
     })
@@ -30,10 +30,17 @@ const createSocket = (topicId) => {
 
 function renderComments(comments){
   const cmts = comments.map(comment => {
+    let email = "Anonymous"
+    if (comment.user) { email = comment.user.email; }
+
     return `
       <li class="collection-item">
         ${comment.content}
+        <div class="secondary-content">
+        ${email}
+        </div>
       </li>
+
     `;
   })
 
@@ -52,4 +59,4 @@ function renderComment(event) {
 
 window.createSocket = createSocket;
 
-export default socket
+// export default socket

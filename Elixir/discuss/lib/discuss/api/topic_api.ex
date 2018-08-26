@@ -34,6 +34,6 @@ defmodule Discuss.TopicApi do
   end
 
   def preload_comments(changeset) do
-    Repo.preload(changeset, :comments)
+    Repo.preload(changeset, comments: [:user])
   end
 end
