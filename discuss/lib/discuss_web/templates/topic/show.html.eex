@@ -1,0 +1,15 @@
+<%= @topic.title %>
+<div class="input-field">
+    <textarea class="materialize-textarea"> </textarea>
+    <button class="btn"> add comment </button>
+
+    <ul class="collection">
+    
+    </ul>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        window.createSocket(<%= @topic.id %>)
+    });
+</script>
