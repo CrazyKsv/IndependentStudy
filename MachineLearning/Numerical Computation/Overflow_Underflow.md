@@ -1,3 +1,5 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
 # Overflow and Underflow
  - This is a form of rounding **error** in numerical computation
 
