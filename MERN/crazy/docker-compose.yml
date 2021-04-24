@@ -1,0 +1,14 @@
+version: '3'
+services:
+  react-app:
+    stdin_open: true
+    build:
+      context: ./
+    command: npm start
+    # volumes:
+    #   - ./client/:/usr/app
+    #   - /usr/app/node_modules
+    # depends_on:
+    #   - server
+    ports:
+      - '3000:3000'
