@@ -1,7 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const UseStateBasics = () => {
-  return <h2>useState basic example</h2>;
-};
+  var [state, changeState] = useState({ v: 'Basic' })
 
-export default UseStateBasics;
+  // console.log(state)
+  const onClickHandler = () => {
+    state.v === 'Basic'
+      ? changeState({ v: 'Life is intense' })
+      : changeState({ v: 'Basic' })
+  }
+
+  return (
+    <React.Fragment>
+      <div className='container'>
+        <p>{state.v}</p>
+        <button className='btn' onClick={onClickHandler}>
+          Update State
+        </button>
+      </div>
+    </React.Fragment>
+  )
+}
+
+export default UseStateBasics
