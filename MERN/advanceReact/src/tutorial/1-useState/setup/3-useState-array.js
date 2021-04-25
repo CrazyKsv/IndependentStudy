@@ -1,8 +1,38 @@
-import React from 'react';
-import { data } from '../../../data';
+import React, { useState } from 'react'
+import { data } from '../../../data'
 
 const UseStateArray = () => {
-  return <h2>useState array example</h2>;
-};
+  const [person, setperson] = useState(data)
+  const [btnText, setbtnText] = useState('Clear')
 
-export default UseStateArray;
+  const onClickHandler = () => {
+    btnText === 'Clear'
+      ? setperson([]) || setbtnText('Restore')
+      : setperson(data) || setbtnText('Clear')
+    // if (btnText === 'Clear') {
+    //   setperson([])
+    //   setbtnText('Restore')
+    // } else {
+    //   setperson(data)
+    //   setbtnText('Clear')
+    // }
+  }
+
+  return (
+    <>
+      {person.map((person) => {
+        const { id, name } = person
+        return (
+          <div key={id} className='item'>
+            <h4>{name}</h4>
+          </div>
+        )
+      })}
+      <button className='btn' onClick={onClickHandler}>
+        {btnText}
+      </button>
+    </>
+  )
+}
+
+export default UseStateArray
