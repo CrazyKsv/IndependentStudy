@@ -17,6 +17,9 @@ const UseStateArray = () => {
     //   setbtnText('Clear')
     // }
   }
+  const removeItem = (id) => {
+    setperson(person.filter((p) => p.id !== id))
+  }
 
   return (
     <>
@@ -25,6 +28,7 @@ const UseStateArray = () => {
         return (
           <div key={id} className='item'>
             <h4>{name}</h4>
+            <button onClick={() => removeItem(id)}>remove</button>
           </div>
         )
       })}
