@@ -9,13 +9,6 @@ const UseStateArray = () => {
     btnText === 'Clear'
       ? setperson([]) || setbtnText('Restore')
       : setperson(data) || setbtnText('Clear')
-    // if (btnText === 'Clear') {
-    //   setperson([])
-    //   setbtnText('Restore')
-    // } else {
-    //   setperson(data)
-    //   setbtnText('Clear')
-    // }
   }
   const removeItem = (id) => {
     setperson(person.filter((p) => p.id !== id))
