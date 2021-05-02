@@ -1,7 +1,14 @@
-import React, { useState, useEffect } from 'react';
-const url = 'https://api.github.com/users/QuincyLarson';
+import React, { useState, useEffect } from 'react'
+const url = 'https://api.github.com/users/QuincyLarson'
 const MultipleReturns = () => {
-  return <h2>multiple returns</h2>;
-};
+  useEffect(() => {
+    fetch(url)
+      .then((resp) => resp.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err))
+  }, [])
 
-export default MultipleReturns;
+  return <h2>multiple returns</h2>
+}
+
+export default MultipleReturns
