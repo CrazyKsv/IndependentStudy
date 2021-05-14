@@ -6,16 +6,19 @@ import GitUser from './tutorial/2-useEffect/setup/3-useEffect-fetch-data'
 import Merror from './tutorial/3-conditional-rendering/setup/1-multiple-returns'
 import Form from './tutorial/4-forms/setup/1-controlled-inputs'
 import Ref from './tutorial/5-useRef/setup/1-useRef-basics'
+
+import Reducers from './tutorial/6-useReducer/setup'
 function App() {
   return (
     <div className='container'>
-      <Comp1 />
+      {/* <Comp1 />
       <Comp2 />
       <Counter />
       <GitUser />
       <Merror />
       <Form />
-      <Ref />
+      <Ref /> */}
+      <Reducers />
     </div>
   )
 }
