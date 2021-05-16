@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close'
+import { NavLink } from './Navbar'
 
 const Navbar = () => {
   const [show, setShow] = useState(true)
@@ -10,9 +11,7 @@ const Navbar = () => {
     <>
       <nav className='navbar navbar-expand-lg navbar-light bg-white text-property'>
         <div className='container active'>
-          <a className='navbar-brand' href='/'>
-            Yutong Zhang
-          </a>
+          <NavLink to='/'>Yutong Zhang</NavLink>
           <button
             className='navbar-toggler border border-info text-info'
             onClick={() => {
@@ -30,19 +29,15 @@ const Navbar = () => {
           >
             <ul className='navbar-nav ms-auto'>
               <li className='nav-item'>
-                <a className='nav-link' href='/'>
+                <NavLink exact={true} to='/'>
                   Work
-                </a>
+                </NavLink>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='./about'>
-                  About
-                </a>
+                <NavLink to='/about'>About</NavLink>
               </li>
               <li className='nav-item'>
-                <a className='nav-link' href='./resume'>
-                  Resume
-                </a>
+                <NavLink to='/resume'>Resume</NavLink>
               </li>
             </ul>
           </div>
