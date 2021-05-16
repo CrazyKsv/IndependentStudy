@@ -1,0 +1,28 @@
+.footer {
+  /* display: grid; */
+  /* grid-template-rows: 1fr auto; */
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  gap: 50%;
+  padding: 0.5rem calc((100vw - 1000px) / 2);
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+img {
+  margin: 0;
+}
+
+.footer-right {
+  align-items: end;
+}
+
+a {
+  margin-left: 10px;
+  color: #000;
+}
+a:hover {
+  background-color: rgb(231, 237, 241);
+}
