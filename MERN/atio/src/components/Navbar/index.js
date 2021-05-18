@@ -44,15 +44,19 @@ const Navbar = ({ toggle }) => {
             </MobileIcon>
             <NavMenu>
               <NavItem>
-                <NavLinks to='/' exact='true'>
+                <NavLinks onClick={toggleHome} to='/' exact={true}>
                   Work
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to='/about'>About</NavLinks>
+                <NavLinks onClick={toggleHome} to='/about'>
+                  About
+                </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to='/resume'>Resume</NavLinks>
+                <NavLinks onClick={toggleHome} to='/resume'>
+                  Resume
+                </NavLinks>
               </NavItem>
             </NavMenu>
           </NavbarContainer>

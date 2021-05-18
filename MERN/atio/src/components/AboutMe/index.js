@@ -20,7 +20,7 @@ import {
   InstagramDiv,
 } from './aboutMe'
 
-import ImageSelfie from '../../images/selfie.svg'
+import ImageSelfie from '../../images/selfie.png'
 import ImageStar from '../../images/star.svg'
 import ImageOtter from '../../images/otter.svg'
 import ImageSparkles from '../../images/sparkles.svg'
@@ -303,7 +303,7 @@ const InfoSection = ({ lightBg, id }) => {
             </JobCom>
             <JobCom>
               <JobTag style={{ fontWeight: 'bold' }}>
-                Shenzhen -> San Diego -> Tokyo -> San Francisco -> ?
+                Shenzhen -&gt; San Diego -&gt; Tokyo -&gt; San Francisco -&gt; ?
               </JobTag>
             </JobCom>
           </JobDes>

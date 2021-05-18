@@ -1,4 +1,4 @@
-import { Link as LinkR } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Nav = styled.nav`
@@ -9,6 +9,7 @@ export const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   font-size: 16px;
+  font-family: Inter;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -28,7 +29,7 @@ export const NavbarContainer = styled.div`
   max-width: 1100px;
 `
 
-export const NavLogo = styled(LinkR)`
+export const NavLogo = styled(Link)`
   color: #000;
   justify-self: flex-start;
   cursor: pointer;
@@ -79,7 +80,7 @@ export const NavBtn = styled.nav`
   }
 `
 
-export const NavLinks = styled(LinkR)`
+export const NavLinks = styled(NavLink)`
   color: black;
   display: flex;
   align-items: center;
@@ -87,7 +88,7 @@ export const NavLinks = styled(LinkR)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  &:active {
+  &.active {
     font-weight: bold;
   }
 `

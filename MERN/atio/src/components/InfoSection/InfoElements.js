@@ -159,7 +159,7 @@ export const ImgWork = styled.img`
 export const WorkWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 1563px;
+  height: auto;
   width: 960px;
   margin-right: auto;
   margin-left: auto;
