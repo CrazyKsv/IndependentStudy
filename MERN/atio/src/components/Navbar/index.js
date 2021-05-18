@@ -44,7 +44,7 @@ const Navbar = ({ toggle }) => {
             </MobileIcon>
             <NavMenu>
               <NavItem>
-                <NavLinks to='/' exact={true}>
+                <NavLinks to='/' exact='true'>
                   Work
                 </NavLinks>
               </NavItem>
