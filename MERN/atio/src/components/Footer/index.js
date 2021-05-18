@@ -1,65 +1,68 @@
 import React from 'react'
-import BubbleTea from '../../asset/bubbleTea.svg'
-import './Footer.css'
 
-function Footer() {
+import { animateScroll as scroll } from 'react-scroll'
+import {
+  FooterContainer,
+  FooterWrap,
+  SocialMedia,
+  SocialMediaWrap,
+  SocialLogo,
+  SocialIcons,
+  SocialIconLink,
+} from './Footer'
+
+import ImageBubble from '../../asset/bubbleTea.svg'
+
+const Footer = () => {
+  const toggleHome = () => {
+    scroll.scrollToTop()
+  }
   return (
-    <>
-      <nav className='navbar navbar-expand-lg navbar-light bg-white footer'>
-        <div className='container'>
-          <div className='navbar-brand footer'>
-            Made with
-            <img src={BubbleTea} alt='log' />
-            by Yutong
-          </div>
-          <div className='collapse navbar-collapse'>
-            <ul className='navbar-nav ms-auto'>
-              <li className='nav-item active'>
-                <a
-                  className='nav-link'
-                  href='https://www.linkedin.com/in/yzhang0530/'
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='mailto:yutongz@cca.edu'>
-                  Email
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a className='nav-link' href='https://medium.com/@erldyb'>
-                  Medium
-                </a>
-              </li>
-              <li className='nav-item'>
-                <a
-                  className='nav-link'
-                  href='https://www.youtube.com/watch?v=SIWbjgPYcJY'
-                >
-                  I feel lucky
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </>
+    <FooterContainer>
+      <FooterWrap>
+        <SocialMedia>
+          <SocialMediaWrap>
+            <SocialLogo to='/' onClick={toggleHome}>
+              Made with
+              <img src={ImageBubble} alt='' />
+              by Yutong
+            </SocialLogo>
+
+            <SocialIcons>
+              <SocialIconLink
+                href='https://www.linkedin.com/in/yzhang0530/'
+                target='_blank'
+                aria-label='LinkedIn'
+              >
+                LinkedIn
+              </SocialIconLink>
+              <SocialIconLink
+                href='mailto:yutongz@cca.edu'
+                target='_blank'
+                aria-label='Email'
+              >
+                Email
+              </SocialIconLink>
+              <SocialIconLink
+                href='https://medium.com/@erldyb'
+                target='_blank'
+                aria-label='Medium'
+              >
+                Medium
+              </SocialIconLink>
+              <SocialIconLink
+                target='_blank'
+                aria-label='Youtube'
+                href='https://www.youtube.com/watch?v=SIWbjgPYcJY'
+              >
+                I feel lucky
+              </SocialIconLink>
+            </SocialIcons>
+          </SocialMediaWrap>
+        </SocialMedia>
+      </FooterWrap>
+    </FooterContainer>
   )
-  // <div className='footer'>
-  //   <div className='footer-msg'>
-  //     Made with
-  //     <img className='footer-msg' src={BubbleTea} alt='log' />
-  //     by Yutong
-  //   </div>
-  //   <div className='footer-right'>
-  //     <a href='https://www.linkedin.com/in/yzhang0530/'>LinkedIn</a>
-  //     <a href='yutongz@cca.edu'>email</a>
-  //     <a href='https://medium.com/@erldyb'>medium</a>
-  //     <a href='https://www.youtube.com/watch?v=SIWbjgPYcJY'>I feel lucky</a>
-  //   </div>
-  //   {/* <div>sdf</div> */}
-  // </div>
 }
 
 export default Footer

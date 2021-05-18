@@ -1,48 +1,88 @@
-import React, { useState } from 'react'
-import './Navbar.css'
-import MenuIcon from '@material-ui/icons/Menu'
-import CloseIcon from '@material-ui/icons/Close'
-import { NavLink } from './Navbar'
+import React, { useState, useEffect } from 'react'
+import { FaBars } from 'react-icons/fa'
+import { IconContext } from 'react-icons/lib'
+import { animateScroll as scroll } from 'react-scroll'
+import {
+  MobileIcon,
+  Nav,
+  NavbarContainer,
+  NavItem,
+  NavLinks,
+  NavLogo,
+  NavMenu,
+} from './NavbarElements'
 
-const Navbar = () => {
-  const [show, setShow] = useState(true)
+const Navbar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false)
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true)
+    } else {
+      setScrollNav(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNav)
+  }, [])
+
+  const toggleHome = () => {
+    scroll.scrollToTop()
+  }
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg navbar-light bg-white text-property'>
-        <div className='container active'>
-          <NavLink to='/'>Yutong Zhang</NavLink>
-          <button
-            className='navbar-toggler border border-info text-info'
-            onClick={() => {
-              setShow(!show)
-            }}
-          >
-            {show ? <MenuIcon /> : <CloseIcon />}
-          </button>
-          <div
-            className={
-              show
-                ? 'collapse navbar-collapse'
-                : 'collapse navbar-collapse active'
-            }
-          >
-            <ul className='navbar-nav ms-auto'>
-              <li className='nav-item'>
-                <NavLink exact={true} to='/'>
+      <IconContext.Provider value={{ color: '#000' }}>
+        <Nav scrollNav={scrollNav}>
+          <NavbarContainer>
+            <NavLogo onClick={toggleHome} to='/'>
+              Yutong Zhang
+            </NavLogo>
+            <MobileIcon onClick={toggle}>
+              <FaBars />
+            </MobileIcon>
+            <NavMenu>
+              <NavItem>
+                <NavLinks
+                  to='about'
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={-80}
+                >
                   Work
-                </NavLink>
-              </li>
-              <li className='nav-item'>
-                <NavLink to='/about'>About</NavLink>
-              </li>
-              <li className='nav-item'>
-                <NavLink to='/resume'>Resume</NavLink>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to='discover'
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={-80}
+                >
+                  About
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to='services'
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={-80}
+                >
+                  Resume
+                </NavLinks>
+              </NavItem>
+            </NavMenu>
+          </NavbarContainer>
+        </Nav>
+      </IconContext.Provider>
     </>
   )
 }

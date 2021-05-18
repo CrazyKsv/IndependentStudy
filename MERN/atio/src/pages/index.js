@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Navbar from '../components/Navbar'
+import Sidebar from '../components/Sidebar'
+import Footer from '../components/Footer'
 
-const Home = () => {
+function Home() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh',
-      }}
-    >
-      <h1>Home</h1>
-    </div>
+    <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
+      {/* <HeroSection /> */}
+      {/* <InfoSection {...homeObjOne} />
+      <InfoSection {...homeObjTwo} />
+      <Services />
+      <InfoSection {...homeObjThree} /> */}
+      <Footer />
+    </>
   )
 }
 
