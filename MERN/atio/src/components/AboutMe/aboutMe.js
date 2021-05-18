@@ -175,21 +175,19 @@ export const JobPos = styled.div`
   align-items: center;
 `
 export const JobTag = styled.p`
-  //styleName: p - selected;
   font-family: Inter;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: 19px;
   letter-spacing: 0em;
-  justify-content: flex-start;
+  justify-content: center;
 `
 
 export const JobDes = styled.div`
   display: flex;
   flex-direction: column;
 
-  justify-content: start;
   align-items: start;
   margin-top: 20px;
   margin-left: 15px;
@@ -237,4 +235,22 @@ export const TinyWin = styled.div`
   display: flex;
   flex-driection: column;
   margin-top: 50px;
+`
+export const GoTo = styled.a`
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  color: black;
+`
+
+export const InstagramDiv = styled.div`
+  height: auto;
+  width: auto;
+  margin-top: 50px;
+  border-radius: 0px;
 `
