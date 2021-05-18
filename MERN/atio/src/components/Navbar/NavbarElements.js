@@ -9,7 +9,7 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: 16px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -33,7 +33,7 @@ export const NavLogo = styled(LinkR)`
   color: #000;
   justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 16px;
   display: flex;
   align-items: center;
   margin-left: 24px;

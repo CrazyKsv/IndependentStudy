@@ -11,7 +11,7 @@ import {
   SocialIconLink,
 } from './Footer'
 
-import ImageBubble from '../../asset/bubbleTea.svg'
+import ImageBubble from '../../images/bubbleTea.svg'
 
 const Footer = () => {
   const toggleHome = () => {
@@ -24,7 +24,7 @@ const Footer = () => {
           <SocialMediaWrap>
             <SocialLogo to='/' onClick={toggleHome}>
               Made with
-              <img src={ImageBubble} alt='' />
+              <img src={ImageBubble} alt='logo' />
               by Yutong
             </SocialLogo>
 
