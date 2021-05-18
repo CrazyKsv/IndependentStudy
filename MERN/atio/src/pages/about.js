@@ -1,9 +1,8 @@
 import React from 'react'
-
 import InfoSection from '../components/InfoSection'
 import { homeObjOne } from '../components/InfoSection/Data'
 
-function Home() {
+function About() {
   return (
     <>
       <InfoSection {...homeObjOne} />
@@ -11,4 +10,4 @@ function Home() {
   )
 }
 
-export default Home
+export default About

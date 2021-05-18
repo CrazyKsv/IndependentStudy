@@ -50,7 +50,6 @@ export const Column2 = styled.div`
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
-  padding-bottom: 60px;
 `
 
 export const TopLine = styled.div`
@@ -97,14 +96,14 @@ export const SubDesWrap = styled.div`
 `
 
 export const ImgWrap = styled.div`
-  max-width: 555px;
+  width: 400px;
+  heigth: 300px;
   height: 100%;
 `
 
 export const SpecialImgWrap = styled.div`
   display: flex;
   flex-direction: row;
-  max-width: 555px;
   justify-content: center;
   align-items: center;
   background-color: #f8f8f8;
@@ -149,6 +148,14 @@ export const ImgWorld = styled.img`
   padding-right: 0;
 `
 
+export const ImgWork = styled.img`
+  width: 36px;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 5px;
+  padding-right: 0;
+`
+
 export const WorkWrapper = styled.div`
   display: grid;
   z-index: 1;
@@ -179,4 +186,50 @@ export const InnerImg = styled.img`
   top: 446px;
   border-radius: 0px;
   margin: 30px;
+`
+
+export const JobPos = styled.div`
+  display: flex;
+  flex-direction: row;
+
+  justify-content: start;
+  align-items: center;
+`
+export const JobTag = styled.div`
+  height: 40px;
+  max-width: 160px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #848484;
+  margin-left: 15px;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+`
+
+export const JobDes = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  justify-content: start;
+  align-items: start;
+  margin-top: 20px;
+  margin-left: 15px;
+`
+
+export const JobCom = styled.div`
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: 500;
+  line-height: 29px;
+  letter-spacing: 0em;
+`
+
+export const JobRes = styled.div`
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  margin-top: 10px;
+  color: #424242;
 `
