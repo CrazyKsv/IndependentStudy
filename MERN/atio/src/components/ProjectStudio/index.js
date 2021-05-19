@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Modal from './Modal'
-import StickySideBar from '../StickySideBar'
+
 import {
   InfoContainer,
   InfoWrapper,
@@ -145,7 +145,7 @@ const Brief = () => {
     `
   return (
     <>
-      <InfoWrapper>
+      <InfoWrapper id='brief'>
         <JobWrapper>
           <JobDes
             style={{
@@ -182,7 +182,7 @@ const MyRole = () => {
   const msg4 = `Other than UX design, I worked on html page design, illustration and banner page related to Xiaoice. I also participated AI School Logo design and Microsoft Inclusion Conference Swags Design.`
   return (
     <>
-      <InfoWrapper>
+      <InfoWrapper id='myRole'>
         <JobWrapper>
           <JobDes
             style={{
@@ -262,7 +262,7 @@ const Radio = () => {
 
   return (
     <>
-      <InfoWrapper>
+      <InfoWrapper id='xiaoice'>
         <JobWrapper>
           <JobDes
             style={{
@@ -449,7 +449,7 @@ When I saw the data for user preference, I was surprised. Three most disliked mu
   const msg3 = `I had chance to attend group brainstorming and design sections where I could learn from the best. I really enjoyed the time working with my team! They were extremely supportive. I was also humbled to host a workshop about different mindsets between developers and designers.`
   return (
     <>
-      <InfoWrapper>
+      <InfoWrapper id='takeaways'>
         <JobWrapper>
           <JobDes
             style={{
@@ -459,7 +459,7 @@ When I saw the data for user preference, I was surprised. Three most disliked mu
             }}
           >
             <JobCom>
-              Takeaways
+              Take aways
               <Img
                 src={ImageTakeAway}
                 alt='takeAway'
@@ -503,7 +503,7 @@ When I saw the data for user preference, I was surprised. Three most disliked mu
 const Moment = () => {
   return (
     <>
-      <InfoWrapper>
+      <InfoWrapper id='moments'>
         <JobWrapper>
           <JobDes
             style={{
@@ -595,13 +595,12 @@ const Gallery = () => {
 const ProjectStudio = () => {
   return (
     <>
-      <StickySideBar />
       <InfoContainer>
         <FontImage />
         <TeamInfo />
-        <Brief id='brief' />
-        <MyRole id='myRole' />
-        <Radio id='xiaoice' />
+        <Brief />
+        <MyRole />
+        <Radio />
 
         <LargeImage
           image={ImageLarge}
@@ -614,7 +613,7 @@ const ProjectStudio = () => {
         />
         <Comment />
         <CommentImage image={ImageComment} underMsg='(Comment Section)' />
-        <TakeAway id='takeaways' />
+        <TakeAway />
         <Moment />
         <Gallery />
       </InfoContainer>

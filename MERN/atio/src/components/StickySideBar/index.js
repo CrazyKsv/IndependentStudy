@@ -12,9 +12,17 @@ function StickySideBar() {
         <nav className='nav-menu '>
           <ul className='nav-menu-items'>
             {SidebarData.map((item, index) => {
+              console.log(item.path)
               return (
                 <li key={index} className={item.cName}>
-                  <Link to={item.path}>
+                  <Link
+                    to={item.path}
+                    smooth={true}
+                    duration={500}
+                    spy={true}
+                    exact='true'
+                    offset={-80}
+                  >
                     {item.icon}
                     <span>{item.title}</span>
                   </Link>
