@@ -4,9 +4,12 @@ import './App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages'
 import About from './pages/about'
+import StudioProject from './pages/studioProject'
+
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
+
 function App() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -20,6 +23,7 @@ function App() {
       <Switch>
         <Route path='/' component={Home} exact />
         <Route path='/about' component={About} exact />
+        <Route path='/studio' component={StudioProject} exact />
       </Switch>
       <Footer />
     </Router>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import LinkIcon from '@material-ui/icons/Link'
 import {
   InfoContainer,
   InfoWrapper,
@@ -25,6 +25,7 @@ import {
   JobCom,
   ImgWork,
   JobRes,
+  DirectProject,
 } from './InfoElements'
 
 import ImageBubble from '../../images/bubbleTea.svg'
@@ -161,6 +162,9 @@ const InfoSection = ({
                   <JobCom>
                     Microsoft studio 8
                     <ImgWork src={ImageArm} alt='arm' />
+                    <DirectProject to='/studio'>
+                      <LinkIcon />
+                    </DirectProject>
                   </JobCom>
                   <JobRes>
                     Exploring how might we empower people with Xiaoice AI

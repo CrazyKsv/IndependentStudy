@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { Link } from 'react-router-dom'
 export const InfoContainer = styled.div`
   background: white;
 
@@ -169,6 +169,7 @@ export const WorkWrapper = styled.div`
 export const WorkRow = styled.div`
   display: grid;
   grid-auto-columns: 1fr 1fr;
+  margin-bottom: 25px;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? "'col2 col1'" : "'col1 col2'"};
   /* Must use '\' css class \'' */
@@ -232,4 +233,12 @@ export const JobRes = styled.div`
   line-height: 26px;
   margin-top: 10px;
   color: #424242;
+`
+
+export const DirectProject = styled(Link)`
+  width: 36px;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 5px;
+  padding-right: 0;
 `
