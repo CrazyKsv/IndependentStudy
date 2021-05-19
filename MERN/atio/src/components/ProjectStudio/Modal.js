@@ -12,17 +12,19 @@ const Modal = (props) => {
   const { title, openPopup, setOpenPopup } = props
 
   return (
-    <Dialog open={openPopup} maxWidth='md'>
-      <DialogTitle>
-        <div style={{ display: 'flex' }}>
-          <Typography variant='h6' component='div' style={{ flexGrow: 1 }}>
-            {title}
-          </Typography>
-          <CloseIcon onClick={() => setOpenPopup(!openPopup)} />
-        </div>
-      </DialogTitle>
-      <DialogContent dividers>{props.children}</DialogContent>
-    </Dialog>
+    <>
+      <Dialog open={openPopup} maxWidth='md'>
+        <DialogTitle>
+          <div style={{ display: 'flex' }}>
+            <Typography variant='h6' component='div' style={{ flexGrow: 1 }}>
+              {title}
+            </Typography>
+            <CloseIcon onClick={() => setOpenPopup(!openPopup)} />
+          </div>
+        </DialogTitle>
+        <DialogContent dividers>{props.children}</DialogContent>
+      </Dialog>
+    </>
   )
 }
 export default Modal

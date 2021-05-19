@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Modal from './Modal'
+import StickySideBar from '../StickySideBar'
 import {
   InfoContainer,
   InfoWrapper,
@@ -304,9 +305,6 @@ const Radio = () => {
 const LargeImage = ({ image, underMsg }) => {
   const [openPopup, setOpenPopup] = useState(false)
 
-  const openInPopup = () => {
-    setOpenPopup(!openPopup)
-  }
   return (
     <>
       <InfoWrapper>
@@ -318,10 +316,14 @@ const LargeImage = ({ image, underMsg }) => {
                 setOpenPopup={setOpenPopup}
                 title='Large Image'
               >
-                <img src={image} alt='enlarge' />
+                <Img src={image} alt='enlarge' />
               </Modal>
             ) : (
-              <Img src={image} alt='large' onClick={openInPopup} />
+              <Img
+                src={image}
+                alt='large'
+                onClick={() => setOpenPopup(!openPopup)}
+              />
             )}
           </ImgWrap>
         </FrameWrapper>
@@ -593,13 +595,14 @@ const Gallery = () => {
 const ProjectStudio = () => {
   return (
     <>
+      <StickySideBar />
       <InfoContainer>
         <FontImage />
         <TeamInfo />
-        <Brief />
-        <MyRole />
-        <Radio />
-        <Radio />
+        <Brief id='brief' />
+        <MyRole id='myRole' />
+        <Radio id='xiaoice' />
+
         <LargeImage
           image={ImageLarge}
           underMsg='(Have-fun State, Sleeping State, Default State)'
@@ -611,7 +614,7 @@ const ProjectStudio = () => {
         />
         <Comment />
         <CommentImage image={ImageComment} underMsg='(Comment Section)' />
-        <TakeAway />
+        <TakeAway id='takeaways' />
         <Moment />
         <Gallery />
       </InfoContainer>
