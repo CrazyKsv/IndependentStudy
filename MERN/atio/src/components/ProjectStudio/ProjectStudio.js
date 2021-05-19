@@ -134,3 +134,8 @@ export const ImageFrame = styled.div`
   background: #f8f8f8;
   justify-content: center;
 `
+export const FullScreenDialog = styled.dialog`
+  position: static;
+  left: 20%;
+  top: 10%;
+`

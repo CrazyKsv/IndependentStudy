@@ -1,5 +1,6 @@
 import React from 'react'
 import LinkIcon from '@material-ui/icons/Link'
+import { animateScroll as scroll } from 'react-scroll'
 import {
   InfoContainer,
   InfoWrapper,
@@ -48,9 +49,13 @@ const InfoSection = ({
   description,
   subdescription,
   id,
-  primary,
+
   darkText,
 }) => {
+  const toggleHome = () => {
+    scroll.scrollToTop()
+  }
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -162,7 +167,7 @@ const InfoSection = ({
                   <JobCom>
                     Microsoft studio 8
                     <ImgWork src={ImageArm} alt='arm' />
-                    <DirectProject to='/studio'>
+                    <DirectProject to='/studio' onClick={toggleHome}>
                       <LinkIcon />
                     </DirectProject>
                   </JobCom>

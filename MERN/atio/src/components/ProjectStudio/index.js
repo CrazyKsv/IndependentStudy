@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from './Modal'
 import {
   InfoContainer,
   InfoWrapper,
@@ -301,12 +302,27 @@ const Radio = () => {
 }
 
 const LargeImage = ({ image, underMsg }) => {
+  const [openPopup, setOpenPopup] = useState(false)
+
+  const openInPopup = () => {
+    setOpenPopup(!openPopup)
+  }
   return (
     <>
       <InfoWrapper>
         <FrameWrapper>
           <ImgWrap>
-            <Img src={image} alt='large' />
+            {openPopup ? (
+              <Modal
+                openPopup={openPopup}
+                setOpenPopup={setOpenPopup}
+                title='Large Image'
+              >
+                <img src={image} alt='enlarge' />
+              </Modal>
+            ) : (
+              <Img src={image} alt='large' onClick={openInPopup} />
+            )}
           </ImgWrap>
         </FrameWrapper>
       </InfoWrapper>
