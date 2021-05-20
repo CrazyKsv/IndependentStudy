@@ -32,6 +32,9 @@ import ImageComment from '../../images/comment.png'
 import ImageTakeAway from '../../images/takeaway.png'
 import ImageMoment from '../../images/moment.png'
 import Image1Large from '../../images/group/1large.png'
+import Image2Large from '../../images/group/2large.png'
+import Image3Large from '../../images/group/3large.png'
+import Image4Large from '../../images/group/4large.png'
 import Image1 from '../../images/group/1.png'
 import Image2 from '../../images/group/2.png'
 import Image3 from '../../images/group/3.png'
@@ -533,13 +536,24 @@ const Moment = () => {
 }
 
 const Gallery = () => {
+  const largeImgList = [Image1Large, Image2Large, Image3Large, Image4Large]
+  const [largeImg, setLargeImg] = useState(Image1Large)
+
+  const handleImgUpdate = (ind) => {
+    setLargeImg(largeImgList[ind])
+  }
+
   return (
     <>
       <InfoWrapper>
         <JobWrapper>
           <Grid container spacing={1}>
             <Grid item xs={12}>
-              <Img src={Image1Large} alt='temp' />
+              <Img
+                src={largeImg}
+                alt='temp'
+                style={{ width: '518px', height: '345px' }}
+              />
             </Grid>
           </Grid>
           <Grid
@@ -549,7 +563,7 @@ const Gallery = () => {
             alignItems='center'
             style={{ marginTop: '15px' }}
           >
-            <ImageFrame>
+            <ImageFrame onClick={() => handleImgUpdate(0)}>
               <Img
                 src={Image1}
                 style={{
@@ -558,7 +572,7 @@ const Gallery = () => {
                 }}
               ></Img>
             </ImageFrame>
-            <ImageFrame>
+            <ImageFrame onClick={() => handleImgUpdate(1)}>
               <Img
                 src={Image2}
                 style={{
@@ -567,7 +581,7 @@ const Gallery = () => {
                 }}
               ></Img>
             </ImageFrame>
-            <ImageFrame>
+            <ImageFrame onClick={() => handleImgUpdate(2)}>
               <Img
                 src={Image3}
                 style={{
@@ -576,7 +590,7 @@ const Gallery = () => {
                 }}
               ></Img>
             </ImageFrame>
-            <ImageFrame>
+            <ImageFrame onClick={() => handleImgUpdate(3)}>
               <Img
                 src={Image4}
                 style={{

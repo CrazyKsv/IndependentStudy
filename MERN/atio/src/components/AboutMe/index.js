@@ -19,7 +19,7 @@ import {
   GoTo,
   InstagramDiv,
 } from './aboutMe'
-
+import Grid from '@material-ui/core/Grid'
 import ImageSelfie from '../../images/selfie.png'
 import ImageStar from '../../images/star.svg'
 import ImageOtter from '../../images/otter.svg'
@@ -28,6 +28,33 @@ import ImagePen from '../../images/pen.svg'
 import ImageLedger from '../../images/ledger.svg'
 import ImageCactus from '../../images/Cactus.svg'
 import ImageIns from '../../images/ins.svg'
+
+import ImageIns1 from '../../images/ins/ins1.png'
+import ImageIns2 from '../../images/ins/ins2.png'
+import ImageIns3 from '../../images/ins/ins3.png'
+import ImageIns4 from '../../images/ins/ins4.png'
+import ImageIns5 from '../../images/ins/ins5.png'
+import ImageIns6 from '../../images/ins/ins6.png'
+
+const Gallery = () => {
+  const imgList = [
+    ImageIns1,
+    ImageIns2,
+    ImageIns3,
+    ImageIns4,
+    ImageIns5,
+    ImageIns6,
+  ]
+  return (
+    <Grid container spacing={2}>
+      {imgList.map((img) => (
+        <Grid item xs={4}>
+          <Img src={img} alt='selfie' style={{ width: '278px' }} />
+        </Grid>
+      ))}
+    </Grid>
+  )
+}
 
 const InfoSection = ({ lightBg, id }) => {
   return (
@@ -308,7 +335,8 @@ const InfoSection = ({ lightBg, id }) => {
             </JobCom>
           </JobDes>
           <InstagramDiv>
-            <Img src={ImageIns} alt='selfie' />
+            {/* <Img src={ImageIns} alt='selfie' /> */}
+            <Gallery />
           </InstagramDiv>
         </WorkWrapper>
       </InfoContainer>
