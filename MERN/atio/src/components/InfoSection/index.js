@@ -1,4 +1,5 @@
 import React from 'react'
+
 import LinkIcon from '@material-ui/icons/Link'
 import { animateScroll as scroll } from 'react-scroll'
 import {
@@ -40,6 +41,7 @@ import ImageGoggles from '../../images/Goggles.svg'
 import ImageScience from '../../images/science.svg'
 import ImageCard from '../../images/card.svg'
 import ImageArm from '../../images/arm.svg'
+
 const InfoSection = ({
   lightBg,
   imgStart,
@@ -63,7 +65,7 @@ const InfoSection = ({
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
-                <Heading lightText={lightText}>
+                <Heading>
                   {headline}
                   <ImgSmall src={ImageBubble} alt='log' />
                 </Heading>

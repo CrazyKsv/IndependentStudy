@@ -1,5 +1,8 @@
 import { NavLink, Link } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { slideInDown, slideInUp } from 'react-animations'
+
+const slideInAnimation = keyframes`${slideInDown}`
 
 export const Nav = styled.nav`
   background: white;
@@ -27,6 +30,10 @@ export const NavbarContainer = styled.div`
   width: 100%;
   padding: 0 24px;
   max-width: 1100px;
+
+  animation-name: ${slideInAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 `
 
 export const NavLogo = styled(Link)`
@@ -81,6 +88,19 @@ export const NavBtn = styled.nav`
 `
 
 export const NavLinks = styled(NavLink)`
+  color: black;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    font-weight: bold;
+  }
+`
+
+export const ALinks = styled.a`
   color: black;
   display: flex;
   align-items: center;

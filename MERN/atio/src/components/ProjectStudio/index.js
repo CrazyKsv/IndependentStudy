@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import Modal from './Modal'
-
+import { Controlled as ControlledZoom } from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 import {
   InfoContainer,
   InfoWrapper,
@@ -307,7 +308,15 @@ const Radio = () => {
 
 const LargeImage = ({ image, underMsg }) => {
   const [openPopup, setOpenPopup] = useState(false)
+  const [isZoomed, setIsZoomed] = useState(false)
 
+  const handleImgLoad = useCallback(() => {
+    setIsZoomed(true)
+  }, [])
+
+  const handleZoomChange = useCallback((shouldZoom) => {
+    setIsZoomed(shouldZoom)
+  }, [])
   return (
     <>
       <InfoWrapper>
@@ -328,6 +337,14 @@ const LargeImage = ({ image, underMsg }) => {
                 onClick={() => setOpenPopup(!openPopup)}
               />
             )}
+            {/* <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange}>
+        <img
+          alt='that wanaka tree'
+          onLoad={handleImgLoad}
+          src={image}
+          width='500'
+        />
+      </ControlledZoom> */}
           </ImgWrap>
         </FrameWrapper>
       </InfoWrapper>
@@ -548,11 +565,20 @@ const Gallery = () => {
       <InfoWrapper>
         <JobWrapper>
           <Grid container spacing={1}>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              style={{
+                maxWidth: '518px',
+                maxWeight: '345px',
+                height: 'auto',
+                width: 'auto',
+              }}
+            >
               <Img
                 src={largeImg}
                 alt='temp'
-                style={{ width: '518px', height: '345px' }}
+                style={{ width: '100%', height: '100%' }}
               />
             </Grid>
           </Grid>

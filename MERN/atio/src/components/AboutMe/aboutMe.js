@@ -1,5 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+import { slideInUp } from 'react-animations'
 
+const slideInAnimation = keyframes`${slideInUp}`
 export const InfoContainer = styled.div`
   background: white;
   @media screen and (max-width: 768px) {
@@ -143,6 +145,9 @@ export const WorkWrapper = styled.div`
   margin-right: auto;
   margin-left: auto;
   justify-content: start;
+  animation-name: ${slideInAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 `
 
 export const WorkRow = styled.div`

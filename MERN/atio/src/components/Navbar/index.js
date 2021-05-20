@@ -10,6 +10,7 @@ import {
   NavLinks,
   NavLogo,
   NavMenu,
+  ALinks,
 } from './NavbarElements'
 
 const Navbar = ({ toggle }) => {
@@ -54,9 +55,12 @@ const Navbar = ({ toggle }) => {
                 </NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks onClick={toggleHome} to='/resume'>
+                <ALinks
+                  href='https://drive.google.com/file/d/1GXndEZz-2bvaiFEy0b5M6kO8bc4TE5rp/view'
+                  target='_blank'
+                >
                   Resume
-                </NavLinks>
+                </ALinks>
               </NavItem>
             </NavMenu>
           </NavbarContainer>

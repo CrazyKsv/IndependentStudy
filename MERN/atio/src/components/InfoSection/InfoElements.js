@@ -1,5 +1,8 @@
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import styled, { keyframes } from 'styled-components'
+import { slideInUp } from 'react-animations'
+
+const slideInAnimation = keyframes`${slideInUp}`
 export const InfoContainer = styled.div`
   background: white;
 
@@ -32,6 +35,9 @@ export const InfoRow = styled.div`
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
+  animation-name: ${slideInAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 `
 
 export const Column1 = styled.div`

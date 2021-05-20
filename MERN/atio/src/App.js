@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
+import { AnimatePresence } from 'framer-motion'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages'
@@ -19,12 +20,13 @@ function App() {
     <Router>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
-
-      <Switch>
-        <Route path='/' component={Home} exact />
-        <Route path='/about' component={About} exact />
-        <Route path='/studio' component={StudioProject} exact />
-      </Switch>
+      <AnimatePresence initial={true} exitBeforeEnter>
+        <Switch>
+          <Route path='/' component={Home} exact />
+          <Route path='/about' component={About} exact />
+          <Route path='/studio' component={StudioProject} exact />
+        </Switch>
+      </AnimatePresence>
       <Footer />
     </Router>
   )
