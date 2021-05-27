@@ -12,7 +12,6 @@ function StickySideBar() {
         <nav className='nav-menu '>
           <ul className='nav-menu-items'>
             {SidebarData.map((item, index) => {
-              console.log(item.path)
               return (
                 <li key={index} className={item.cName}>
                   <Link

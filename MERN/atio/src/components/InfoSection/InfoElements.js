@@ -35,9 +35,6 @@ export const InfoRow = styled.div`
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
-  animation-name: ${slideInAnimation};
-  animation-duration: 1s;
-  animation-iteration-count: 1;
 `
 
 export const Column1 = styled.div`
@@ -56,6 +53,9 @@ export const Column2 = styled.div`
 export const TextWrapper = styled.div`
   max-width: 540px;
   padding-top: 0;
+  animation-name: ${slideInAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: 1;
 `
 
 export const TopLine = styled.div`
@@ -144,6 +144,9 @@ export const WorkFooter = styled.h1`
   font-weight: 400;
   margin-top: 300px;
   color: #212121;
+  animation-name: ${slideInAnimation};
+  animation-duration: 5s;
+  animation-iteration-count: 1;
 `
 
 export const ImgWorld = styled.img`
@@ -176,6 +179,9 @@ export const WorkRow = styled.div`
   display: grid;
   grid-auto-columns: 1fr 1fr;
   margin-bottom: 25px;
+  animation-name: ${slideInAnimation};
+  animation-duration: 1s;
+  animation-iteration-count: 1;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? "'col2 col1'" : "'col1 col2'"};
   /* Must use '\' css class \'' */

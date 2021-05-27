@@ -1,6 +1,6 @@
 import { NavLink, Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
-import { slideInDown, slideInUp } from 'react-animations'
+import { slideInDown } from 'react-animations'
 
 const slideInAnimation = keyframes`${slideInDown}`
 

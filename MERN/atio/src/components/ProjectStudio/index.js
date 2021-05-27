@@ -1,6 +1,6 @@
-import React, { useState, useCallback } from 'react'
-import Modal from './Modal'
-import { Controlled as ControlledZoom } from 'react-medium-image-zoom'
+import React, { useState } from 'react'
+
+import ImageZoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 import {
   InfoContainer,
@@ -306,45 +306,24 @@ const Radio = () => {
   )
 }
 
-const LargeImage = ({ image, underMsg }) => {
-  const [openPopup, setOpenPopup] = useState(false)
-  const [isZoomed, setIsZoomed] = useState(false)
-
-  const handleImgLoad = useCallback(() => {
-    setIsZoomed(true)
-  }, [])
-
-  const handleZoomChange = useCallback((shouldZoom) => {
-    setIsZoomed(shouldZoom)
-  }, [])
+const LargeImage = ({ currImage, underMsg }) => {
   return (
     <>
       <InfoWrapper>
         <FrameWrapper>
           <ImgWrap>
-            {openPopup ? (
-              <Modal
-                openPopup={openPopup}
-                setOpenPopup={setOpenPopup}
-                title='Large Image'
-              >
-                <Img src={image} alt='enlarge' />
-              </Modal>
-            ) : (
-              <Img
-                src={image}
-                alt='large'
-                onClick={() => setOpenPopup(!openPopup)}
-              />
-            )}
-            {/* <ControlledZoom isZoomed={isZoomed} onZoomChange={handleZoomChange}>
-        <img
-          alt='that wanaka tree'
-          onLoad={handleImgLoad}
-          src={image}
-          width='500'
-        />
-      </ControlledZoom> */}
+            <ImageZoom
+              image={{
+                src: currImage,
+                alt: 'Example',
+                className: 'img',
+                style: { width: '50em' },
+              }}
+              zoomImage={{
+                src: currImage,
+                alt: 'Example',
+              }}
+            />
           </ImgWrap>
         </FrameWrapper>
       </InfoWrapper>
@@ -446,12 +425,23 @@ const Comment = () => {
   )
 }
 
-const CommentImage = ({ image, underMsg }) => {
+const CommentImage = ({ currImage, underMsg }) => {
   return (
     <>
       <InfoWrapper>
         <FrameWrapper>
-          <Img src={image} alt='dis' style={{ height: '590px' }} />
+          <ImageZoom
+            image={{
+              src: currImage,
+              alt: 'Comment Image',
+              className: 'img',
+              style: { height: '590px' },
+            }}
+            zoomImage={{
+              src: currImage,
+              alt: 'Comment Image',
+            }}
+          />
         </FrameWrapper>
       </InfoWrapper>
       <InfoWrapper>
@@ -575,10 +565,22 @@ const Gallery = () => {
                 width: 'auto',
               }}
             >
-              <Img
+              {/* <Img
                 src={largeImg}
                 alt='temp'
                 style={{ width: '100%', height: '100%' }}
+              /> */}
+              <ImageZoom
+                image={{
+                  src: largeImg,
+                  alt: 'Example',
+                  className: 'img',
+                  style: { width: '100%', height: '100%' },
+                }}
+                zoomImage={{
+                  src: largeImg,
+                  alt: 'Example',
+                }}
               />
             </Grid>
           </Grid>
@@ -643,16 +645,16 @@ const ProjectStudio = () => {
         <Radio />
 
         <LargeImage
-          image={ImageLarge}
+          currImage={ImageLarge}
           underMsg='(Have-fun State, Sleeping State, Default State)'
         />
         <Onboarding />
         <LargeImage
-          image={ImageDiscuss}
+          currImage={ImageDiscuss}
           underMsg='(Question 1, Question 2, Question 3)'
         />
         <Comment />
-        <CommentImage image={ImageComment} underMsg='(Comment Section)' />
+        <CommentImage currImage={ImageComment} underMsg='(Comment Section)' />
         <TakeAway />
         <Moment />
         <Gallery />

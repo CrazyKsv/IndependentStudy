@@ -27,7 +27,6 @@ import ImageSparkles from '../../images/sparkles.svg'
 import ImagePen from '../../images/pen.svg'
 import ImageLedger from '../../images/ledger.svg'
 import ImageCactus from '../../images/Cactus.svg'
-import ImageIns from '../../images/ins.svg'
 
 import ImageIns1 from '../../images/ins/ins1.png'
 import ImageIns2 from '../../images/ins/ins2.png'
@@ -38,18 +37,18 @@ import ImageIns6 from '../../images/ins/ins6.png'
 
 const Gallery = () => {
   const imgList = [
-    ImageIns1,
-    ImageIns2,
-    ImageIns3,
-    ImageIns4,
-    ImageIns5,
-    ImageIns6,
+    { id: 1, img: ImageIns1 },
+    { id: 2, img: ImageIns2 },
+    { id: 3, img: ImageIns3 },
+    { id: 4, img: ImageIns4 },
+    { id: 5, img: ImageIns5 },
+    { id: 6, img: ImageIns6 },
   ]
   return (
     <Grid container spacing={2}>
       {imgList.map((img) => (
-        <Grid item xs={4}>
-          <Img src={img} alt='selfie' style={{ width: '278px' }} />
+        <Grid item xs={4} key={img.id}>
+          <Img src={img.img} alt='selfie' style={{ width: '278px' }} />
         </Grid>
       ))}
     </Grid>
