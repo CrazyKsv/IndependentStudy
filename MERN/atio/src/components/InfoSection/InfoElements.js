@@ -253,4 +253,5 @@ export const DirectProject = styled(Link)`
   margin-right: 0;
   margin-left: 5px;
   padding-right: 0;
+  text-decoration: none;
 `

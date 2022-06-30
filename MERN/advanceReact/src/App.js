@@ -11,13 +11,13 @@ import Reducers from './tutorial/6-useReducer/setup'
 function App() {
   return (
     <div className='container'>
-      {/* <Comp1 />
+      <Comp1 />
       <Comp2 />
       <Counter />
       <GitUser />
       <Merror />
       <Form />
-      <Ref /> */}
+      <Ref />
       <Reducers />
     </div>
   )

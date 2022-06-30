@@ -167,11 +167,10 @@ const InfoSection = ({
 
                 <JobDes>
                   <JobCom>
-                    Microsoft studio 8
-                    <ImgWork src={ImageArm} alt='arm' />
                     <DirectProject to='/studio' onClick={toggleHome}>
-                      <LinkIcon />
+                      Microsoft studio 8
                     </DirectProject>
+                    <ImgWork src={ImageArm} alt='arm' />
                   </JobCom>
                   <JobRes>
                     Exploring how might we empower people with Xiaoice AI
